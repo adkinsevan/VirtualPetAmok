@@ -9,7 +9,7 @@ public class Cat extends PetShelterAnimals implements OrganicPet {
     public Cat(String name, String description) {
         super(name, description);
     }
-    public Cat(String name, String description, int thirst, int boredom, int hunger, int litterBoxCleanliness){
+    public Cat(String name, String description, int thirst, int boredom, int hunger){
         super(name, description);
         int randomThirst = (int)(Math.random()*8) +4;
         int randomBoredom = (int)(Math.random()*8) +4;
@@ -63,6 +63,6 @@ public class Cat extends PetShelterAnimals implements OrganicPet {
         }
     }
     public void cleanLiterBox() {
-        litterBoxCleanliness = 20;
+        litterBoxCleanliness += 10;
     }
 }

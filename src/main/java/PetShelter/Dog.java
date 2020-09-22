@@ -25,7 +25,7 @@ public class Dog extends PetShelterAnimals implements OrganicPet, Dogs {
     @Override
     public void walkAllDogs() {
        boredom -=4;
-       cageCleanliness +=3;
+       cageCleanliness -=3;
     }
     @Override
     public void giveWater() {
@@ -72,6 +72,6 @@ public class Dog extends PetShelterAnimals implements OrganicPet, Dogs {
         }
     }
     public void cleanCage(){
-        cageCleanliness = 20;
+        cageCleanliness += 10;
     }
 }

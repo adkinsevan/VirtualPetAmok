@@ -34,6 +34,17 @@ public class RoboDog extends PetShelterAnimals implements RoboPet, Dogs {
         health --;
         maintenanceLvl --;
     }
+
+    @Override
+    public void giveWater() {
+    }
+    @Override
+    public void playWithAll() {
+    }
+    @Override
+    public void feedAll() {
+    }
+
     @Override
     public void oilAndMaintain() {
         health += 4;

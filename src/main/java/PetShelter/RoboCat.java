@@ -32,6 +32,16 @@ public class RoboCat extends PetShelterAnimals implements RoboPet {
     }
 
     @Override
+    public void giveWater() {
+    }
+    @Override
+    public void playWithAll() {
+    }
+    @Override
+    public void feedAll() {
+    }
+
+    @Override
     public void oilAndMaintain() {
         health += 4;
         maintenanceLvl += 4;

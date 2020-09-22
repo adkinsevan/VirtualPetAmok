@@ -8,8 +8,6 @@ public class PetShelterTest {
     PetShelter underTest = new PetShelter();
     Dog testDog = new Dog("Test Dog", "This Dog is a test ");
     Cat testCat = new Cat("Test Cat", "This Cat is a test");
-    RoboDog testRoboDog = new RoboDog("Test RoboDog", "This RoboDog is a test", 0);
-    RoboCat testRoboCat = new RoboCat("Test RoboCat", "This RoboCat is a test", 0);
 
     @Test
     public void shouldBeAbleToAddDog(){
