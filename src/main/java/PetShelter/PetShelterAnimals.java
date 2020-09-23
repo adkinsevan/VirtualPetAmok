@@ -1,26 +1,20 @@
 package PetShelter;
 
-public abstract class PetShelterAnimals {
-
+public abstract class PetShelterAnimals extends PetShelter {
     protected String name;
     protected String description;
-    protected int health;
 
-    public PetShelterAnimals(String name, String description){
-        this.name = name;
-        this.description = description;
-        health = 16;
+    private int health;
 
+    public int getHealth(){
+        return health;
     }
 
-
-    public abstract String getPetName();
-    public abstract String getDescription();
-    public abstract int getHealth();
-
-    public abstract void tick();
-
-    public abstract void giveWater();
-    public abstract void playWithAll();
-    public abstract void feedAll();
+    public String getName(){
+        return name;
+    }
+    public String getDescription(){
+        return description;
+    }
+    public abstract void playWith();
 }

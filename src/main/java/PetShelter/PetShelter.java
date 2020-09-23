@@ -7,10 +7,10 @@ import java.util.Map;
 public class PetShelter {
     Map<String, PetShelterAnimals> animalList = new HashMap<>();
 
-    public void addPet(PetShelterAnimals petToAdd){
-        animalList.put(petToAdd.getPetName(), petToAdd);
+    public void addPet(String name, PetShelterAnimals petToAdd){
+        animalList.put(petToAdd.getName(), petToAdd);
 }
-    public void remove(PetShelterAnimals petToRemove){ animalList.remove(petToRemove.getPetName(), petToRemove); }
+    public void remove(String name){ animalList.remove(name); }
 
     public Collection<PetShelterAnimals> getAllAnimals(){
         return animalList.values();
@@ -20,20 +20,9 @@ public class PetShelter {
         return animalList.get(petName);
     }
 
-
-    public void giveWaterAll(){
-        for (PetShelterAnimals giveWater : animalList.values()){
-            giveWater.giveWater();
-        }
-    }
     public void playWithAll(){
         for (PetShelterAnimals playWith : animalList.values()){
-            playWith.playWithAll();
-        }
-    }
-    public void feedAll() {
-        for (PetShelterAnimals feed : animalList.values()) {
-            feed.feedAll();
+            playWith.playWith();
         }
     }
     public void tick(){

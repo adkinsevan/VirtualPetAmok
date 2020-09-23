@@ -1,68 +1,28 @@
 package PetShelter;
 
-public class Dog extends PetShelterAnimals implements OrganicPet, Dogs {
-    private int hunger;
-    private int thirst;
-    private int boredom;
+public class Dog extends OrganicPet implements Dogs {
     private int cageCleanliness;
 
 
-    public Dog(String name, String description) {
-        super(name, description);
-    }
-    public Dog(String name, String description, int thirst, int boredom, int hunger, int cageCleanliness){
-        super(name, description);
+    public Dog(String name, String description, int thirst){
         int randomThirst = (int)(Math.random()*8) +4;
         int randomBoredom = (int)(Math.random()*8) +4;
         int randomHunger = (int)(Math.random()*8) +4;
         int randomCageCleanliness = (int)(Math.random()*6)+1;
-        this.thirst = randomThirst;
+        this.thirst = 6;
         this.boredom = randomBoredom;
         this.hunger = randomHunger;
         this.cageCleanliness = randomCageCleanliness;
     }
-
-    @Override
-    public void walkAllDogs() {
-       boredom -=4;
-       cageCleanliness -=3;
-    }
-    @Override
-    public void giveWater() {
-        thirst -= 4;
-        health += 4;
-    }
-    @Override
-    public void playWithAll() {
-    }
-    @Override
-    public void feedAll() {
-    }
-    @Override
-    public void playWith() {
-        boredom -= 4;
-        health += 4;
-    }
-    @Override
-    public void feed() {
-        hunger -= 4;
-        health += 4;
-    }
-
-    @Override
-    public String getPetName() { return name; }
-    @Override
-    public String getDescription() { return description; }
-    @Override
-    public int getHealth() { return health; }
-    public int getHunger() { return hunger; }
-    public int getThirst() { return thirst; }
-    public int getBoredom() { return boredom; }
     public int getCageCleanliness(){ return cageCleanliness;}
 
     @Override
+    public void walkAllDogs() {
+        cageCleanliness -= 2;
+        boredom -= 2;
+    }
+    @Override
     public void tick() {
-    health--;
     hunger++;
     thirst++;
     boredom++;
@@ -74,4 +34,6 @@ public class Dog extends PetShelterAnimals implements OrganicPet, Dogs {
     public void cleanCage(){
         cageCleanliness += 10;
     }
+
+
 }
