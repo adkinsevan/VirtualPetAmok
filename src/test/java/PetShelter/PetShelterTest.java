@@ -6,25 +6,25 @@ import static org.junit.Assert.assertEquals;
 
 public class PetShelterTest {
     PetShelter underTest = new PetShelter();
-    Dog testDog = new Dog("Test Dog", "This Dog is a test ",2);
-    Cat testCat = new Cat("Test Cat", "This Cat is a test");
+    Dog testDog = new Dog("Test Dog", "This Dog is a test",6);
+    Cat testCat = new Cat("Test Cat", "This Cat is a test",6);
 
     @Test
     public void shouldBeAbleToAddDog(){
-        underTest.addPet("Maya", testDog);
-        PetShelterAnimals findDog =  underTest.findPet("Test Dog");
-        assertEquals("Test Dog",findDog.getName());
+        underTest.addPet("Test Dog", testDog);
+        PetShelterAnimals findingPet =  underTest.findPet("Test Dog");
+        assertEquals(findingPet, testDog);
     }
     @Test
     public void shouldBeAbleToAddCat(){
-        underTest.addPet("Maya", testCat);
-        PetShelterAnimals findCat =  underTest.findPet("Test Cat");
-        assertEquals("Test Cat",findCat.getName());
+        underTest.addPet("Test Cat", testCat);
+        PetShelterAnimals findingPet =  underTest.findPet("Test Cat");
+        assertEquals(findingPet, testCat);
     }
     @Test
     public void removingPetTest(){
-        underTest.addPet("Maya", testDog);
-        underTest.remove("Maya");
+        underTest.addPet("Test Dog",testDog);
+        underTest.remove("Test Dog");
         PetShelterAnimals findPet = underTest.findPet("Test Dog");
         assertEquals(findPet,null);
     }

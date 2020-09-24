@@ -4,15 +4,12 @@ public class Dog extends OrganicPet implements Dogs {
     private int cageCleanliness;
 
 
-    public Dog(String name, String description, int thirst){
-        int randomThirst = (int)(Math.random()*8) +4;
-        int randomBoredom = (int)(Math.random()*8) +4;
-        int randomHunger = (int)(Math.random()*8) +4;
-        int randomCageCleanliness = (int)(Math.random()*6)+1;
-        this.thirst = 6;
-        this.boredom = randomBoredom;
-        this.hunger = randomHunger;
-        this.cageCleanliness = randomCageCleanliness;
+
+    public Dog(String name, String description, int health){
+        super(name, description,health);
+        this.cageCleanliness = 2;
+
+
     }
     public int getCageCleanliness(){ return cageCleanliness;}
 
