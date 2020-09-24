@@ -6,13 +6,9 @@ import static org.junit.Assert.assertTrue;
 
 public class OrganicPetTest {
 
-        PetShelter test;
-        PetShelterAnimals test1;
-        OrganicPet test2;
 
-
-        Dog testDog = new Dog("Test Dog", "This Dog is a test ",6);
-        Cat testCat = new Cat("Test Cat", "This Cat is a test", 6);
+        Dog testDog = new Dog("Test Dog", "This Dog is a test ");
+        Cat testCat = new Cat("Test Cat", "This Cat is a test");
 
 
 
@@ -27,7 +23,6 @@ public class OrganicPetTest {
         public void giveWaterToAllOrganicPets(){
             testDog.addPet("Test Dog",testDog);
             testCat.addPet("Test Cat", testCat);
-            test2.organicPetsWater();
             assertEquals(2, testDog.getThirst());
             assertEquals(2, testCat.getThirst());
         }

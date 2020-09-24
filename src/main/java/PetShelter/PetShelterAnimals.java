@@ -6,10 +6,11 @@ public abstract class PetShelterAnimals extends PetShelter {
 
     public int health;
 
-    public PetShelterAnimals(String name, String description, int health){
+    public PetShelterAnimals(String name, String description){
+        int randomHealth = (int) (Math.random() * 8) + 2;
         this.name = name;
         this.description = description;
-        this.health = health;
+        this.health = randomHealth;
     }
 
     public int getHealth(){
@@ -22,6 +23,8 @@ public abstract class PetShelterAnimals extends PetShelter {
         return description;
 
     }
+    public abstract void giveWater();
+    public abstract void feed();
     public abstract void playWith();
     public abstract void tick();
 }

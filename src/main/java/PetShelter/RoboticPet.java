@@ -7,10 +7,10 @@ public abstract class RoboticPet extends PetShelterAnimals {
 
     public int maintenanceLvl;
 
-    public RoboticPet(String name, String description, int health) {
-        super(name, description, health);
+    public RoboticPet(String name, String description) {
+        super(name, description);
         int randomMaintenanceLvl = (int)(Math.random()*8) +4;
-        this.maintenanceLvl = 2;
+        this.maintenanceLvl = randomMaintenanceLvl;
     }
 
     public int getMaintenanceLvl() {

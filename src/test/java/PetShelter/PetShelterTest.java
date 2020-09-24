@@ -6,8 +6,8 @@ import static org.junit.Assert.assertEquals;
 
 public class PetShelterTest {
     PetShelter underTest = new PetShelter();
-    Dog testDog = new Dog("Test Dog", "This Dog is a test",6);
-    Cat testCat = new Cat("Test Cat", "This Cat is a test",6);
+    Dog testDog = new Dog("Test Dog", "This Dog is a test");
+    Cat testCat = new Cat("Test Cat", "This Cat is a test");
 
     @Test
     public void shouldBeAbleToAddDog(){

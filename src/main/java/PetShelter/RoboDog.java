@@ -3,10 +3,20 @@ package PetShelter;
 public class RoboDog extends RoboticPet implements Dogs {
 
 
-    public RoboDog(String name, String description, int health){
-        super(name,description,health);
+    public RoboDog(String name, String description){
+        super(name,description);
 
     }
+
+    @Override
+    public void giveWater() {
+
+    }
+
+    @Override
+    public void feed() {
+    }
+
     @Override
     public void walkAllDogs() {
         maintenanceLvl --;

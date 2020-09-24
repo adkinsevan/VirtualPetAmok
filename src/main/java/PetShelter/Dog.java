@@ -5,12 +5,11 @@ public class Dog extends OrganicPet implements Dogs {
 
 
 
-    public Dog(String name, String description, int health){
-        super(name, description,health);
+    public Dog(String name, String description){
+        super(name, description);
         this.cageCleanliness = 2;
-
-
     }
+
     public int getCageCleanliness(){ return cageCleanliness;}
 
     @Override
@@ -18,19 +17,7 @@ public class Dog extends OrganicPet implements Dogs {
         cageCleanliness -= 2;
         boredom -= 2;
     }
-    @Override
-    public void tick() {
-    hunger++;
-    thirst++;
-    boredom++;
-    cageCleanliness--;
-        if(health < 5) {
-            System.out.println("Your pet doesn't seem to be very happy");
-        }
-    }
     public void cleanCage(){
         cageCleanliness += 10;
     }
-
-
 }
