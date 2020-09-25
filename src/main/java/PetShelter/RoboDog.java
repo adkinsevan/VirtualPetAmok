@@ -5,6 +5,8 @@ public class RoboDog extends RoboticPet implements Dogs {
 
     public RoboDog(String name, String description){
         super(name,description);
+        int randomMaintenanceLvl = (int)(Math.random()*8) +4;
+        this.maintenanceLvl = randomMaintenanceLvl;
 
     }
 

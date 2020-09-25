@@ -10,9 +10,9 @@ public class OrganicPet extends PetShelterAnimals {
 
     public OrganicPet(String name, String description){
         super(name,description);
-        int randomHunger = (int) (Math.random()*6)+1;
-        int randomThirst = (int) (Math.random()*6)+1;
-        int randomBoredom = (int) (Math.random()*6)+1;
+        int randomHunger = (int) (Math.random()*6)+4;
+        int randomThirst = (int) (Math.random()*6)+4;
+        int randomBoredom = (int) (Math.random()*6)+4;
         this.hunger = randomHunger;
         this.thirst = randomThirst;
         this.boredom = randomBoredom;

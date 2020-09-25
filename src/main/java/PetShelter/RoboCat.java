@@ -6,6 +6,8 @@ public class RoboCat extends RoboticPet {
 
     public RoboCat(String name, String description) {
         super(name, description);
+        int randomMaintenanceLvl = (int)(Math.random()*8) +4;
+        this.maintenanceLvl = randomMaintenanceLvl;
 
     }
 
