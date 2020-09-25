@@ -22,5 +22,10 @@ public class RoboDog extends RoboticPet implements Dogs {
         maintenanceLvl --;
         System.out.println("You walk the Robot Dog, they don't seem to like this. They don't seem to dislike this either.");
     }
+
+    @Override
+    public void cleanCage(String petName) {
+        System.out.println("ERROR: CLEANING CAGE DOES NOT COMPUTE");
     }
+}
 

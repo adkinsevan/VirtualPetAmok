@@ -17,7 +17,6 @@ public class Dog extends OrganicPet implements Dogs {
         cageCleanliness -= 2;
         boredom -= 2;
     }
-    public void cleanCage(){
-        cageCleanliness += 10;
-    }
+    @Override
+    public void cleanCage(String petName) { cageCleanliness += 10; }
 }

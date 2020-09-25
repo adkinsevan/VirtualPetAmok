@@ -39,11 +39,81 @@ public class PetShelterApp {
         System.out.println("9: Help a pet get adopted");
         System.out.println("10: Go home for the day");
         String mainMenuOption = input.nextLine();
-        while (!mainMenuOption.equals(10)) {
-            if (mainMenuOption.equals(1)) {
+        while (!mainMenuOption.equals("10")) {
+            if (mainMenuOption.equals("1")) {
                 for (PetShelterAnimals pet : petList) {
                     System.out.println((pet.getName()) + " : " + pet.getHealth());
                 }
+            }
+            else if (mainMenuOption.equals("2")) {
+                for (PetShelterAnimals organic : petList) {
+                    if (organic instanceof OrganicPet) {
+                        organic.giveWater();
+                    }
+                    myShelter.tick();
+                }
+            }
+            else if (mainMenuOption.equals("3")){
+                for (PetShelterAnimals organic : petList){
+                    if (organic instanceof OrganicPet){
+                        organic.feed();
+                    }
+                    myShelter.tick();
+                }
+            }
+            else if (mainMenuOption.equals("4")){
+                System.out.println("Would you like to clean the dog cages or the cat litter-box?" + "\n");
+                System.out.println("1: Cat Litter-Box");
+                System.out.println("2: Dog Cage");
+                System.out.println("3 Go Back");
+                String cleanMenuOption = input.nextLine();
+                while (!cleanMenuOption.equals("3")) {
+                    if (cleanMenuOption.equals("1")) {
+                        for (PetShelterAnimals cats : petList) {
+                            if (cats instanceof Cat) {
+                                cats.cleanLiterBox();
+                                myShelter.tick();
+                            }
+                        }
+                    } else if (cleanMenuOption.equals("2")) {
+                        System.out.println("Which dog's cage would you like to clean?");
+                        for (PetShelterAnimals dogs : petList) {
+                            if (dogs instanceof Dogs) {
+                                System.out.println(dogs.getName() + "\n");
+                                String dogCleanCageOption = input.nextLine();
+                                PetShelterAnimals cleanCage = dogs.findPet(dogCleanCageOption);
+                                cleanCage.cleanCage();
+                                myShelter.tick();
+                            }
+                        }
+                    } else {
+                        System.out.println("Would you like to clean the dog cages or the cat litter-box?" + "\n");
+                        System.out.println("1: Cat Litter-Box");
+                        System.out.println("2: Dog Cage");
+                        cleanMenuOption = input.nextLine();
+                        }
+                    }
+                }
+            else if(mainMenuOption.equals("5")) {
+                for (PetShelterAnimals robotic : petList){
+                    myShelter.oilAndMaintain();
+                    myShelter.tick();
+                }
+                }
+            else if(mainMenuOption.equals("6")){
+                System.out.println("Which pet would you like to play with?");
+                for(PetShelterAnimals pet : petList){
+                    System.out.println(pet.getName() +"\n");
+                }
+                String petPlayOption = input.nextLine();
+                myShelter.playWith(petPlayOption);
+                System.out.println("You play with " + petPlayOption);
+                myShelter.tick();
+            }
+        else if(mainMenuOption.equals("7")) {
+            for (PetShelterAnimals dogs : petList){
+                myShelter.walkAllDogs;
+            }
             }
         }
     }

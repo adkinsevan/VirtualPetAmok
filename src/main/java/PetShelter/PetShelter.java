@@ -25,7 +25,6 @@ public class PetShelter {
             }
         }
     }
-
     public void giveWaterOrganicPets(){
         for (PetShelterAnimals organic : animalList.values()){
             if (organic instanceof OrganicPet){
@@ -33,13 +32,10 @@ public class PetShelter {
             }
         }
     }
+    public void playWith(String petName){
+         PetShelterAnimals playWith = findPet(petName);
+         playWith.playWith();
 
-
-
-    public void playWithAll(){
-        for (PetShelterAnimals all : animalList.values()){
-            all.playWith();
-        }
     }
     public void tick(){
         for (PetShelterAnimals all : animalList.values()){
